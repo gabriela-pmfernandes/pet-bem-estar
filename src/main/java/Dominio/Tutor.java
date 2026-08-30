@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Dono {
+public class Tutor {
 	@Id
 	private Long id;
 	private String nome;
@@ -14,10 +14,10 @@ public class Dono {
 	
 	private List<Animal> animais = new ArrayList<>();
 	
-	public Dono() {
+	public Tutor() {
 	}
 	
-	public Dono(String nome, String telefone) {
+	public Tutor(String nome, String telefone) {
 		this.nome = nome;
 		this.telefone = telefone;
 	}

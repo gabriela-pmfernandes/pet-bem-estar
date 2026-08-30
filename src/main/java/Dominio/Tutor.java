@@ -22,31 +22,32 @@ public class Tutor {
 		this.telefone = telefone;
 	}
 	
+	public void adicionarAnimal(Animal animal){
+		animais.add(animal);
+		animal.setTutor(this);
+	}
 	public Long getId() {
 		return id;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	
 	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone() {
-		this.telefone = telefone;
-	}
+	
 	public List<Animal> getAnimais(){
 		return animais;
 	}
-	public void adicionarAnimal(Animal animal) {
-		animais.add(animal);
-		animal.setDono(this);
+	
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
+	@Override
+	public String toString() {
+		return nome;
 	}
 }

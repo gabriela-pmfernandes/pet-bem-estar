@@ -1,5 +1,5 @@
 package Dominio;
 
 public enum SituacaoAtendimento {
-	MARCADO, REALIZADO, DESMARCADO, NAO_COMPARECEU
+	AGENDADO, REALIZADO, CANCELADO, NAO_COMPARECEU
 }

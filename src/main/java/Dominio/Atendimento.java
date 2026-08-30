@@ -10,48 +10,52 @@ public class Atendimento {
 	@Id
 	private Long id;
 	private LocalDateTime dataHora;
-	private TipoServico tipoServico;
+	private TipoAtendimento tipo;
 	private SituacaoAtendimento situacao;
+	private Double valor;
 	private Animal animal;
 	
 	public Atendimento() {
 	}
 	
-	public Atendimento(LocalDateTime dataHora, TipoServico tipoServico) {
+	public Atendimento(LocalDateTime dataHora, TipoAtendimento tipo) {
 		this.dataHora = dataHora;
-		this.tipoServico = tipoServico;
-		this.situacao = situacao.MARCADO;
+		this.tipo = tipo;
+		this.situacao = SituacaoAtendimento.AGENDADO;
 	}
-	 public Long getId() {
-		 return id;
-	 }
-	 public void setId(Long id) {
-		 this.id = id;
-	 }
-	 public LocalDateTime getDataHora() {
-		 return dataHora;
-	 }
-	 public void setDataHora(LocalDateTime dataHora) {
-		 this.dataHora = dataHora;
-	 }
-	 
-	 public TipoServico getTipoServico() {
-		 return tipoServico;
-	 }
-	 
-	public void setTipoServico(TipoServico tipoServico) {
-		this.tipoServico = tipoServico;
+	public Long getId() {
+		return id;
 	}
+	 
+	public LocalDateTime getDataHora() {
+		return dataHora;
+	}
+	 
+	public TipoAtendimento getTipo() {
+		return tipo;
+	}
+	 
 	public SituacaoAtendimento getSituacao() {
 		return situacao;
 	}
-	public void setSituacao(SituacaoAtendimento situacao) {
-		this.situacao = situacao;
+	
+	public Double getValor() {
+		return valor;
 	}
 	public Animal getAnimal() {
 		return animal;
 	}
 	public void setAnimal(Animal animal) {
 		this.animal = animal;
+	}
+	public void setSituacao(SituacaoAtendimento situacao) {
+		this.situacao = situacao;
+	}
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+	@Override
+	public String toString() {
+		return tipo + "em" + dataHora + "(" + situacao + ")";
 	}
 }

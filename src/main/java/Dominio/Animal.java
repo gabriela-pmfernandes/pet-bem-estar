@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Animal {
@@ -15,8 +17,11 @@ public class Animal {
 	private String nome;
 	private Especie especie;
 	private Porte porte;
+	
+	@ManyToOne
 	private Tutor tutor;
 	
+	@OneToMany(mappedBy = "animal")
 	private List<Atendimento> atendimentos = new ArrayList<>();
 	
 	public Animal() {

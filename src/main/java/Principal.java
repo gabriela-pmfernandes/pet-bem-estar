@@ -7,6 +7,9 @@ import Dominio.Porte;
 import Dominio.SituacaoAtendimento;
 import Dominio.TipoAtendimento;
 import Dominio.Tutor;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class Principal {
 
@@ -52,6 +55,19 @@ Tutor rosa = new Tutor("Rosa", "(51)99999-0000");
 			Atendimento ultimo = animal.ultimoAtendimentoRealizado();
 			System.out.println("Última vez que: "+ animal.getNome() + " veio: " + (ultimo == null ? "nunca veio" : ultimo.getDataHora().toString()));
 		}
+		
+		EntityManagerFactory emf =
+		        Persistence.createEntityManagerFactory("pet-bem-estar-pu");
+		EntityManager em = emf.createEntityManager();
+
+		em.getTransaction().begin();
+		em.persist(rosa);
+		em.persist(banhoDaMimi);
+		
+		em.getTransaction().commit();
+
+		em.close();
+		emf.close();
 
 	}
 

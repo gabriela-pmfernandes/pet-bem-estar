@@ -1,4 +1,4 @@
-package Dominio;
+package br.edu.ifrs.petbemestar.dominio;
 
 import java.time.LocalDateTime;
 

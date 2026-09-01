@@ -1,12 +1,14 @@
+package br.edu.ifrs.petbemestar;
+
 import java.time.LocalDateTime;
 
-import Dominio.Animal;
-import Dominio.Atendimento;
-import Dominio.Especie;
-import Dominio.Porte;
-import Dominio.SituacaoAtendimento;
-import Dominio.TipoAtendimento;
-import Dominio.Tutor;
+import br.edu.ifrs.petbemestar.dominio.Animal;
+import br.edu.ifrs.petbemestar.dominio.Atendimento;
+import br.edu.ifrs.petbemestar.dominio.Especie;
+import br.edu.ifrs.petbemestar.dominio.Porte;
+import br.edu.ifrs.petbemestar.dominio.SituacaoAtendimento;
+import br.edu.ifrs.petbemestar.dominio.TipoAtendimento;
+import br.edu.ifrs.petbemestar.dominio.Tutor;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
